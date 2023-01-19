@@ -21,6 +21,7 @@ public class MemberController {
     //자동으로 연결을 시켜 줌 Dependency Injection
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+        System.out.println("memberService : " + memberService.getClass());      //aop를 사용하면 실제 클래스가 아닌 프록시가 호출되는 것을 확인 할 수 있음
     }
 
     @GetMapping("/members/new")

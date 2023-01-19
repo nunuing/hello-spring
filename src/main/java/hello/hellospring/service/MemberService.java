@@ -26,6 +26,16 @@ public class MemberService {
     회원가입
      */
     public Long join(Member member) {
+//        long start = System.currentTimeMillis();
+//        try {
+//            validateDuplicateMember(member);
+//            memberRepository.save(member);
+//            return member.getId();
+//        } finally {
+//            long finish = System.currentTimeMillis();
+//            long timeMs = finish - start;
+//            System.out.println("join = " + timeMs + "ms");
+//        }
         validateDuplicateMember(member);
         memberRepository.save(member);
         return member.getId();
